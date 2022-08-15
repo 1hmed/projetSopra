@@ -15,6 +15,7 @@ const UserProfile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
   const [feeds, setFeeds] = useState(null);
+  console.log(userInfo);
 
   const fireStoreDb = getFirestore(firebaseApp);
 

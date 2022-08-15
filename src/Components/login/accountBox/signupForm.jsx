@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "./design.css";
 import {
   BoldLink,
   BoxContainer,
@@ -10,23 +9,24 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
-import { signup ,useAuth,adding } from "../../../firebase-config";
+import { adding, signup ,useAuth } from "../../../firebase-config";
 import { useRef, useState } from "react";
+import { MdAddShoppingCart } from "react-icons/md";
 
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
   const [loading, setLoading]=useState(false);
   const currentUser = useAuth ();
-  const nameRef=useRef();
-  const photoRef=useRef();
   const emailRef=useRef();
   const passwordRef= useRef();
+  const nameRef=useRef();
+  const photoRef=useRef();
   async function handleSignup(){
     setLoading(true) ; 
     try{
     await signup(emailRef.current.value, passwordRef.current.value);
-    adding(nameRef.current.value,photoRef.current.value);
+    adding(nameRef.current.value,photoRef.current.value)
     switchToSignin();
   } catch {
     alert ("Error!");
@@ -42,10 +42,12 @@ export function SignupForm(props) {
         <Input type="email" ref={emailRef} placeholder="Email" />
         <Input type="password" ref={passwordRef} placeholder="Password" />
         <Input type="password" placeholder="Confirm Password" />
-        <input type="file" ref={photoRef} id="file" accept="image/*" />
+        <input type='file' ref={photoRef} id='file'/>
         <label for="file">
-        <span class="material-icons"></span>
-          Choose a Photo</label>
+          <span class="material-icons">
+          </span>
+          Choose photo
+        </label>
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <SubmitButton disabled={loading || currentUser} onClick={handleSignup } type="submit">Signup</SubmitButton>

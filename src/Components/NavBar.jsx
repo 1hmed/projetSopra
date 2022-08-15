@@ -102,7 +102,7 @@ const NavBar = ({ user, setsearchTerm, searchTerm }) => {
           </MenuButton>
           <MenuList shadow={"lg"}>
             <Link to={`/userDetail/${user?.uid}`}>
-              <MenuItem>My Account</MenuItem>
+              <MenuItem>My Account ({user?.displayName})</MenuItem>
             </Link>
             <MenuItem
               flexDirection={"row"}

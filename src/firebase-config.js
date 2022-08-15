@@ -29,6 +29,12 @@ export function logout (){
   return signOut(auth);
 }
 
+export function adding(name,photo){
+  updateProfile(auth.currentUser,{
+    displayName:name,photoURL:photo
+  })
+}
+
 //custom hook
 export function useAuth(){
     const [currentUser,setCurrentUser]= useState();
