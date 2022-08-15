@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth,createUserWithEmailAndPassword, onAuthStateChanged,signInWithEmailAndPassword, signOut} from "firebase/auth";
+import { updateProfile,getAuth,createUserWithEmailAndPassword, onAuthStateChanged,signInWithEmailAndPassword, signOut} from "firebase/auth";
 import { useEffect, useState } from "react";
 
 
@@ -22,6 +22,12 @@ export function signup (email,password){
 
 export function logout (){
   return signOut(auth);
+}
+
+export function adding(name,photo){
+  updateProfile(auth.currentUser,{
+    displayName:name,photoURL:photo
+  })
 }
 
 //custom hook
