@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { signup ,useAuth } from "../firebase-config";
 import { Flex } from "@chakra-ui/react";
 import {
   Category,
@@ -13,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 import { categories } from "../data";
 
 const Home = ({ user }) => {
+  console.log(user);
   const [searchTerm, setsearchTerm] = useState("");
   return (
     <>
