@@ -12,7 +12,6 @@ import {
 import { Routes, Route } from "react-router-dom";
 import { categories } from "../data";
 const Home = ({ user }) => {
-  const [searchTerm, setsearchTerm] = useState("");
   window.onload = function() {
     if(!window.location.hash) {
       window.location = window.location + '#loaded';
@@ -20,7 +19,9 @@ const Home = ({ user }) => {
     }
   }
   window.onload();
-  console.log(user);
+  const [searchTerm, setsearchTerm] = useState("");
+  console.log(user)
+
   return (
     <>
       <NavBar user={user} setsearchTerm={setsearchTerm} />

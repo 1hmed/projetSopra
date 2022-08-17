@@ -24,9 +24,10 @@ export function logout (){
   return signOut(auth);
 }
 
-export function adding(name,photo){
+export function adding(name){
   updateProfile(auth.currentUser,{
-    displayName:name,photoURL:photo
+    displayName:name
+    // ,photoURL:photo
   })
 }
 
