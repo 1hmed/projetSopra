@@ -31,7 +31,8 @@ export function SignupForm(props) {
     try{
     await signup(emailRef.current.value, passwordRef.current.value);
 
-    adding(nameRef.current.value,photoRef.current.value);
+    adding(nameRef.current.value
+      ,photoRef.current.value);
     switchToSignin();
   } catch {
     alert ("Error!");
@@ -48,10 +49,10 @@ export function SignupForm(props) {
         <Input type="password" ref={passwordRef} placeholder="Password" />
         <Input type="password" placeholder="Confirm Password" />
 
-        {/* <input type="file" ref={photoRef} id="file" accept=".png .jpg .jpeg"  />
+        <input type="file" ref={photoRef} id="file" accept=".png .jpg .jpeg"  />
         <label for="file">
         <span class="material-icons"></span>
-          Choose a Photo</label> */}
+          Choose a Photo</label>
      
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
