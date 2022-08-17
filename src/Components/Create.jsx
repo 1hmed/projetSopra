@@ -15,10 +15,10 @@ import Spinner from "./Spinner";
 // prettier-ignore
 import {getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject} from 'firebase/storage'
 import { firebaseApp } from "../firebase-config";
-//import {} from '../firebase-config';
+import {} from '../firebase-config';
 import AlertMsg from "./AlertMsg";
 import { Editor } from "@tinymce/tinymce-react/lib/cjs/main/ts/components/Editor";
-//import { fetchUser } from "../utils/fetchUser";
+import { fetchUser } from "../utils/fetchUser";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +41,7 @@ const Create = () => {
   const [alertIcon, setAlertIcon] = useState(null);
   const [description, setDescription] = useState("");
 
-  //const [userInfo] = fetchUser();
+  const [userInfo] = fetchUser();
   const navigate = useNavigate();
 
   const storage = getStorage(firebaseApp);
@@ -121,7 +121,7 @@ const Create = () => {
         const data = {
           id: `${Date.now()}`,
           title: title,
-          //userId: userInfo?.uid,
+          userId: userInfo?.uid,
           category: category,
           location: location,
           videoUrl: videoAsset,
