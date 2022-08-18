@@ -75,7 +75,7 @@ const VideoPin = ({ data }) => {
 
           <Link to={`/userDetail/${userId}`}>
             <Image
-              src={userInfo?.photoURL ? userInfo?.photoURL : avatar}
+              src={avatar}
               rounded="full"
               width={"50px"}
               height={"50px"}

@@ -99,7 +99,6 @@ const NavBar = ({ user, setsearchTerm, searchTerm }) => {
               height="40px"
               minWidth={"40px"}
               rounded="full"
-              alt="jbjhb"
             />
           </MenuButton>
           <MenuList shadow={"lg"}>

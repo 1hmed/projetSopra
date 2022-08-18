@@ -78,7 +78,7 @@ const VideoPinDetail = () => {
   const navigate = useNavigate();
   // firestore database instance
   const firestoreDb = getFirestore(firebaseApp);
-  // const [localUser] = fetchUser();
+  const [localUser] = fetchUser();
 
   const [isLoading, setIsLoading] = useState(false);
   const [videoInfo, setVideoInfo] = useState(null);
@@ -406,7 +406,7 @@ const VideoPinDetail = () => {
 
               {/* Ction Buttons */}
               <Flex justifyContent={"space-around"} mt={6}>
-                {/* {userInfo?.uid === localUser.uid && ( */}
+                {userInfo?.uid === localUser.uid && (
                   <Popover closeOnEsc>
                     <PopoverTrigger>
                       <Button colorScheme={"red"}>
